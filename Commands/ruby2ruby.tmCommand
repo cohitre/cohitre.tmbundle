@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+require 'rubygems'
+require 'ruby2ruby'
+require 'ruby_parser'
+
+ruby      = STDIN.read
+parser    = RubyParser.new
+ruby2ruby = Ruby2Ruby.new
+sexp      = parser.process(ruby)
+
+puts ruby2ruby.process(sexp)
+
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
+	<key>name</key>
+	<string>ruby2ruby</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>8485CD69-2521-4389-8D74-56368DA5700A</string>
+</dict>
+</plist>
